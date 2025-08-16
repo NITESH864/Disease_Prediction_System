@@ -1,0 +1,1 @@
+gunicorn dp_project.wsgi:application
