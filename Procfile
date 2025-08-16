@@ -1,1 +1,1 @@
-web: gunicorn dp_project.wsgi:application
+gunicorn --chdir dp_project dp_project.wsgi:application
