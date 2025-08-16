@@ -7,6 +7,7 @@ services:
       pip install -r requirements.txt
       python manage.py collectstatic --noinput
     startCommand: gunicorn dp_project.wsgi:application
+
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: dp_project.settings
