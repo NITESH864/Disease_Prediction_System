@@ -1,1 +1,1 @@
-web: gunicorn dp_project.wsgi:application
+gunicorn dp_project.wsgi:application --chdir diseasePredict
