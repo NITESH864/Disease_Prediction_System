@@ -1,1 +1,1 @@
-gunicorn --chdir dp_project dp_project.wsgi:application
+web: sh -c "cd dp_project && gunicorn dp_project.wsgi:application"
