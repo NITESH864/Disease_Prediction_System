@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: dp-project
+    name: dp_project
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn dp_project.wsgi:application

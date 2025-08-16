@@ -1,1 +1,1 @@
-gunicorn dp_project.wsgi:application
+web: gunicorn dp_project.wsgi:application
