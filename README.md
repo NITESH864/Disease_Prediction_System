@@ -1,71 +1,84 @@
-# 🧠 Machine Learning Basics + 🌐 Disease Prediction Web App
+# 🩺 Disease Prediction System  
 
-This repository contains **two major parts** of my Machine Learning journey:
+This is a **Django-based web application** that predicts diseases based on user symptoms using a trained Machine Learning model.  
 
-1. 📘 **Machine Learning Basics** → Jupyter Notebooks covering data preprocessing, ML algorithms, and datasets.  
-2. 🌐 **Django Disease Prediction System** → A web application that predicts diseases using ML models.
+## 🚀 Features  
+- User-friendly web interface with Django templates.  
+- Predicts disease from symptoms using **ML model (`best_model.pkl`)**.  
+- Stores prediction history in **SQLite database**.  
+- Interactive UI with **Bootstrap templates**.  
 
----
+## 📂 Project Structure  
+```
+diseasePredict/
+│── db.sqlite3                  # Database
+│── manage.py                   # Django management script
+│
+├── dpapp/                      # Main Django App
+│   ├── admin.py                 # Django admin config
+│   ├── apps.py                  # App configuration
+│   ├── best_model.pkl           # Trained ML model
+│   ├── label_encoder.pkl        # Label encoder
+│   ├── models.py                # Django models
+│   ├── views.py                 # Main application logic
+│   ├── tests.py                 # Tests
+│   ├── migrations/              # DB migrations
+│   ├── static/                  # Static files (CSS, JS, Images)
+│   │   └── images/              # Project images
+│   └── templates/               # HTML templates
+│       ├── index.html           # Home page
+│       ├── parent.html          # Base template
+│       ├── prediction.html      # Prediction results page
+│       ├── history.html         # User history page
+│       └── fpred.html           # Form for prediction
+```
 
-## 📌 Project Overview
+## 🛠️ Installation & Setup  
 
-- Learn and practice **core ML concepts** with Python.  
-- Implement algorithms like **Linear Regression, KNN, SVM, Decision Tree, Random Forest, ANN**.  
-- Work with **real datasets** like Iris, Insurance, Student marks, Sports, and Disease datasets.  
-- Build and deploy a **Disease Prediction Web Application** using Django + ML.  
-
-This project is a **step-by-step learning + deployment journey**.
-
----
-
-## 📂 Project Structure
-
-### 🔹 Part 1: Machine Learning Basics (`st-ml/`)
-
-- **Data Preprocessing**
-  - Notebook: `DataPreprocessing.ipynb`  
-  - Handling missing values, categorical encoding, feature scaling, train-test split.  
-
-- **Python Libraries Practice**
-  - `numpyPractice.ipynb` → Arrays, math ops.  
-  - `pandasPractice.ipynb` → DataFrames, filtering, grouping.  
-  - `matplotlibPractice.ipynb` → Data visualization basics.  
-
-- **Machine Learning Algorithms**
-  - 📈 Linear Regression → `LinearRegression Implementation.ipynb`, `Student Marks Predictor.ipynb`  
-  - 👥 KNN → `KNN Implementation-1.ipynb`, `KNN Implementation-2.ipynb`  
-  - 🌀 SVM → `SVM Implementation-1.ipynb`  
-  - 🌳 Decision Tree → `Decision Tree Classifier.ipynb`  
-  - 🌲 Random Forest → `Iris dataset classification using random forest.ipynb`, `Diseases Predict using Random Forest.ipynb`  
-  - 🔬 ANN → `ANN Implementation-1.ipynb`, `ANN Implementation-2.ipynb`  
-
-- **Datasets**
-  - `iris.csv`, `student_info.csv`, `insurance.csv`, `sports.csv`, `dataset.csv`, `improved_disease_dataset.csv`, `taxi.csv`, `Emp.csv`  
-
-- **Saved Models**
-  - `best_model.pkl`, `dtc.pkl`, `label_encoder.pkl`, `smp.pkl`  
-
----
-
-### 🔹 Part 2: Disease Prediction Web App (`diseasePredict/`)
-
-- **Backend**
-  - Django project → `manage.py`, `settings.py`, `urls.py`, `views.py`  
-  - ML models → `best_model.pkl`, `label_encoder.pkl`  
-
-- **Frontend**
-  - Templates → `index.html`, `prediction.html`, `fpred.html`, `history.html`, `parent.html`  
-  - Static files → `images/img1.jpg`  
-
-- **Database**
-  - `db.sqlite3` (default Django DB for storing predictions/history)  
-
----
-
-## 🚀 Getting Started
-
-### 1️⃣ Clone the Repository
+### 1️⃣ Clone the repository  
 ```bash
-git clone https://github.com/your-username/ml-basics-disease-predict.git
-cd ml-basics-disease-predict
+git clone <your-repo-link>
+cd diseasePredict
+```
 
+### 2️⃣ Create Virtual Environment  
+```bash
+python -m venv venv
+source venv/bin/activate   # For Linux/Mac
+venv\Scripts\activate      # For Windows
+```
+
+### 3️⃣ Install Dependencies  
+```bash
+pip install -r requirements.txt
+```
+
+*(If `requirements.txt` is not present, manually install Django & required packages)*  
+```bash
+pip install django scikit-learn pandas numpy
+```
+
+### 4️⃣ Run Migrations  
+```bash
+python manage.py migrate
+```
+
+### 5️⃣ Run Development Server  
+```bash
+python manage.py runserver
+```
+Now visit: **http://127.0.0.1:8000/** 🎉  
+
+## 📊 Machine Learning Model  
+- Model file: **`best_model.pkl`**  
+- Encodes symptoms using **label_encoder.pkl**  
+- Trained with scikit-learn for disease classification  
+
+## 📸 Screenshots  
+(Add screenshots of your `index.html`, `prediction.html`, etc.)  
+
+## 🤝 Contributing  
+Feel free to fork, raise issues, or submit PRs to improve the project.  
+
+## 📜 License  
+This project is open-source under the **MIT License**.  
