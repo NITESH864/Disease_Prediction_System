@@ -37,7 +37,7 @@ diseasePredict/
 
 ### 1️⃣ Clone the repository  
 ```bash
-git clone <your-repo-link>
+git clone <(https://github.com/NITESH864/Disease_Prediction_System)>
 cd diseasePredict
 ```
 
@@ -73,9 +73,6 @@ Now visit: **http://127.0.0.1:8000/** 🎉
 - Model file: **`best_model.pkl`**  
 - Encodes symptoms using **label_encoder.pkl**  
 - Trained with scikit-learn for disease classification  
-
-## 📸 Screenshots  
-(Add screenshots of your `index.html`, `prediction.html`, etc.)  
 
 ## 🤝 Contributing  
 Feel free to fork, raise issues, or submit PRs to improve the project.  
