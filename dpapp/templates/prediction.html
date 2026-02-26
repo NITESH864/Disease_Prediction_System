@@ -1,0 +1,130 @@
+{% extends "parent.html" %}
+{% block body %}
+
+<div class="container my-5" data-aos="fade-up">
+     <div class="row justify-content-center">
+          <div class="col-lg-9 col-xl-8">
+               <div class="card shadow-sm border-0" style="border-radius: 15px;">
+                    <div class="card-body p-4">
+
+                         <!-- Title and Subtitle - reduced margins -->
+                         <div class="text-center mb-4">
+                              <i class="bi bi-clipboard2-pulse"
+                                   style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                              <h2 class="section-title mt-2">Symptom Checker</h2>
+                              <p class="text-muted">Select 'Yes' or 'No' for each symptom to get an AI-based analysis.
+                              </p>
+                         </div>
+
+                         <!-- Prediction Result Display -->
+                         {% if res %}
+                         <div class="alert alert-success d-flex align-items-center shadow-sm" role="alert"
+                              data-aos="zoom-in">
+                              <i class="bi bi-check-circle-fill me-3" style="font-size: 1.25rem;"></i>
+                              <div>
+                                   <h5 class="alert-heading mb-0">Prediction Result: <strong>{{ res }}</strong></h5>
+                              </div>
+                         </div>
+                         <hr class="my-4">
+                         {% endif %}
+
+                         <!-- Form starts here -->
+                         <form class="from-group" method="post">
+                              {% csrf_token %}
+
+                              <div class="row g-3">
+                                   <div class="col-md-6">
+                                        <label for="fever" class="form-label fw-bold small">Fever</label>
+                                        <select class="form-select" name="fever" id="fever">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="headache" class="form-label fw-bold small">Headache</label>
+                                        <select class="form-select" name="headache" id="headache">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="nausea" class="form-label fw-bold small">Nausea</label>
+                                        <select class="form-select" name="nausea" id="nausea">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="vomiting" class="form-label fw-bold small">Vomiting</label>
+                                        <select class="form-select" name="vomiting" id="vomiting">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="fatigue" class="form-label fw-bold small">Fatigue</label>
+                                        <select class="form-select" name="fatigue" id="fatigue">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="joint_pain" class="form-label fw-bold small">Joint Pain</label>
+                                        <select class="form-select" name="joint_pain" id="joint_pain">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="skin_rash" class="form-label fw-bold small">Skin Rash</label>
+                                        <select class="form-select" name="skin_rash" id="skin_rash">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="cough" class="form-label fw-bold small">Cough</label>
+                                        <select class="form-select" name="cough" id="cough">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="weight_loss" class="form-label fw-bold small">Weight Loss</label>
+                                        <select class="form-select" name="weight_loss" id="weight_loss">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-6">
+                                        <label for="yellow_eyes" class="form-label fw-bold small">Yellow Eyes</label>
+                                        <select class="form-select" name="yellow_eyes" id="yellow_eyes">
+                                             <option value="0" selected>No</option>
+                                             <option value="1">Yes</option>
+                                        </select>
+                                   </div>
+
+                                   <!-- Submit Button -->
+                                   <div class="col-12 text-center mt-4">
+                                        <button type="submit" class="btn btn-primary px-5 rounded-pill">
+                                             <i class="bi bi-activity me-2"></i>Predict
+                                        </button>
+                                   </div>
+                              </div>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+
+{% endblock body %}
