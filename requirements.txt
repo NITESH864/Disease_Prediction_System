@@ -1,5 +1,6 @@
-scipy==1.13.0
+Django
+Djangorestframework
+scikit-learn
 numpy
 pandas
-
-# Added pre-compiled wheels if necessary
+requests
