@@ -77,5 +77,46 @@ Now visit: **http://127.0.0.1:8000/** 🎉
 ## 🤝 Contributing  
 Feel free to fork, raise issues, or submit PRs to improve the project.  
 
+## 🚀 Deploy to Heroku
+
+### 1) Prerequisites
+- Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+- Login:
+```bash
+heroku login
+```
+
+### 2) Create Heroku app
+```bash
+heroku create <your-app-name>
+```
+
+### 3) Configure environment variables
+Set a strong secret key and production settings:
+```bash
+heroku config:set SECRET_KEY="<your-strong-secret-key>"
+heroku config:set DEBUG=False
+heroku config:set ALLOWED_HOSTS="<your-app-name>.herokuapp.com"
+```
+
+### 4) Prepare database and static files
+```bash
+python manage.py migrate
+python manage.py collectstatic --noinput
+```
+
+### 5) Deploy
+```bash
+git push heroku main
+heroku ps:scale web=1
+heroku open
+```
+
+### 6) Useful checks
+```bash
+heroku logs --tail
+heroku run python manage.py migrate
+```
+
 ## 📜 License  
 This project is open-source under the **MIT License**.  

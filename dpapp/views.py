@@ -2,10 +2,16 @@ from django.shortcuts import render
 import pandas as pd
 import os
 import joblib
+from functools import lru_cache
 from . models import History
 path=os.path.dirname(__file__)
-model=joblib.load(open(os.path.join(path,'best_model.pkl'),'rb'))
-label_encoder=joblib.load(open(os.path.join(path,'label_encoder.pkl'),'rb'))
+
+
+@lru_cache(maxsize=1)
+def load_artifacts():
+    model = joblib.load(open(os.path.join(path, 'best_model.pkl'), 'rb'))
+    label_encoder = joblib.load(open(os.path.join(path, 'label_encoder.pkl'), 'rb'))
+    return model, label_encoder
 
 # Create your views here.
 def index(req):
@@ -13,6 +19,7 @@ def index(req):
 
 def prediction(req):
     if req.method=='POST':
+        model, label_encoder = load_artifacts()
         fever=req.POST['fever']
         headache=req.POST['headache']
         nausea=req.POST['nausea']
@@ -35,6 +42,7 @@ def prediction(req):
 
 def fpred(req):
     if req.method=='POST':
+        model, label_encoder = load_artifacts()
         csv_file=req.FILES["csv_file"]
         df=pd.read_csv(csv_file)
         input_df=df.drop("disease",axis='columns')
