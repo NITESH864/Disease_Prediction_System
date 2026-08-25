@@ -77,5 +77,11 @@ Now visit: **http://127.0.0.1:8000/** 🎉
 ## 🤝 Contributing  
 Feel free to fork, raise issues, or submit PRs to improve the project.  
 
+## 🌐 Render Deployment (Free)
+- Deployment guide: `RENDER_DEPLOYMENT_GUIDE.md`
+- Start command: `gunicorn dp_project.wsgi:application`
+- Build command: `pip install -r requirements.txt && python manage.py collectstatic --noinput`
+- Required env var: `SECRET_KEY`
+ 
 ## 📜 License  
 This project is open-source under the **MIT License**.  
