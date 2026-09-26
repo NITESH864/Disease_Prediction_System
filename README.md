@@ -66,8 +66,14 @@ python manage.py migrate
 ### 5️⃣ Run Development Server  
 ```bash
 python manage.py runserver
-```
-Now visit: **http://127.0.0.1:8000/** 🎉  
+
+# Disease Prediction System
+
+A Django-based web application that predicts diseases based on user-provided symptoms and medical information.
+
+## 🚀 Live Demo
+
+👉 [Click here to use the Live Website](https://dp-project-r6x6.onrender.com)
 
 ## 📊 Machine Learning Model  
 - Model file: **`best_model.pkl`**  
