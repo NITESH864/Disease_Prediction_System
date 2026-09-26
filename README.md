@@ -37,7 +37,7 @@ diseasePredict/
 
 ### 1️⃣ Clone the repository  
 ```bash
-git clone <(https://github.com/Richakushwaha87/Disease_Prediction_System)>
+git clone <(https://github.com/NITESH864/Disease_Prediction_System)>
 cd diseasePredict
 ```
 
@@ -68,3 +68,14 @@ python manage.py migrate
 python manage.py runserver
 ```
 Now visit: **http://127.0.0.1:8000/** 🎉  
+
+## 📊 Machine Learning Model  
+- Model file: **`best_model.pkl`**  
+- Encodes symptoms using **label_encoder.pkl**  
+- Trained with scikit-learn for disease classification  
+
+## 🤝 Contributing  
+Feel free to fork, raise issues, or submit PRs to improve the project.  
+
+## 📜 License  
+This project is open-source under the **MIT License**.  
