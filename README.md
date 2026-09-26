@@ -37,8 +37,8 @@ diseasePredict/
 
 ### 1️⃣ Clone the repository  
 ```bash
-git clone <(https://github.com/NITESH864/Disease_Prediction_System)>
-cd diseasePredict
+git clone https://github.com/NITESH864/Disease_Prediction_System.git
+cd Disease_Prediction_System
 ```
 
 ### 2️⃣ Create Virtual Environment  
@@ -65,9 +65,9 @@ python manage.py migrate
 
 ### 5️⃣ Run Development Server  
 ```bash
-python manage.py runserver
+python manage.py runserver 0.0.0.0:${PORT:-8000}
 ```
-Now visit: **http://127.0.0.1:8000/** 🎉  
+Now visit: **http://localhost:8000/** 🎉  
 
 ## 📊 Machine Learning Model  
 - Model file: **`best_model.pkl`**  
