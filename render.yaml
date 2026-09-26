@@ -12,5 +12,5 @@ services:
         generateValue: true
       - key: PYTHON_VERSION
         value: "3.13.14"
-      - key: ALLOWED_HOSTS
-        value: disease-prediction-system.onrender.com
+     - key: ALLOWED_HOSTS
+       value: dp-project-r6x6.onrender.com
